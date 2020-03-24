@@ -3,9 +3,7 @@ class TequilaDrink
     @@all=[]
 
     def initialize(hash)
-        # @strDrink = name
-        # @idDrink = id
-        
+    
        hash.each do |k,v|
             self.send("#{k}=", v) if self.respond_to?(k)
        end
