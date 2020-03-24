@@ -1,28 +1,34 @@
 class TequilaDrink
-    attr_accessor :name, :ingredients, :instructions
+    attr_accessor :strDrink, :idDrink
     @@all=[]
 
-    def initialize(name, ingredients, instructions)
-        @name = name
-        @ingredients = ingredients
-        @instructions = instructions
-        @@all << self
+    def initialize(name=nil, id=nil)
+        @strDrink = name
+        @idDrink = id
+        
+    #    hash.each do |k,v|
+    #         if k != :strDrinkThumb
+    #             self.send("#{k}=", v) if self.respond_to?(k)
+    #         end
+    #    end
+       @@all << self
+       
     end
 
     def self.all
         @@all
     end
 
-    def list_drink_names
+# #     def list_drink_names
 
-    end
+# #     end
 
-    def shopping_list
+# #     def shopping_list
 
-    end
+# #     end
 
-    def how_to_make
-        
-    end
+# #     def how_to_make
+
+# #     end
     
 end
