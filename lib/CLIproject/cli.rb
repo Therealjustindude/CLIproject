@@ -1,7 +1,7 @@
 class CLI
     def start
         self.welcome
-        self.get_tequila
+       
     end
 
     def welcome
@@ -10,10 +10,10 @@ class CLI
         puts "Pick one to find a shopping list and instructions"
         puts "Enter the number that interests you!"
 
-        input = gets.chomp.to_i 
+        # input = gets.chomp.to_i 
     end
 
-    def get_tequila
-        API.tequila_drinks
-    end
+    
+
+   
 end
