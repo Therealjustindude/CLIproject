@@ -2,5 +2,6 @@
 
 require_relative "../config/environment"
 
-# CLI.new.start
-API.tequila_drinks
+CLI.new.start
+# API.tequila_drinks
+# TequilaDrink.list_drink_names
