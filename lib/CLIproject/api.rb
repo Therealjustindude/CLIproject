@@ -22,6 +22,22 @@ class API
             tequila_obj.set_attributes(instructions)
         end
         
+        response["drinks"].each do |arr|
+            ingredients= arr.select do |attr, value| 
+               if attr.include? "strIngredient"
+                 value
+               end
+            end
+            
+            
+            binding.pry
+            
+            
+            tequila_obj.set_attributes(ingredients)
+     
+        end
+
+        
     end
     
     def self.all

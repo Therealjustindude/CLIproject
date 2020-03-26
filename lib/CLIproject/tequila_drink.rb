@@ -1,5 +1,5 @@
 class TequilaDrink
-    attr_accessor :strDrink, :idDrink, :strInstructions
+    attr_accessor :strDrink, :idDrink, :strInstructions, :strIngredient
     @@all=[]
 
     def initialize(hash)
@@ -25,12 +25,13 @@ class TequilaDrink
 
     
 
-    def self.shopping_list
+    # def self.shopping_list
 
-    end
+    # end
 
-    def self.how_to_make
-        self.all.each {|k| k == strInstructions}
-    end
+    # def self.how_to_make
+    #     binding.pry
+    #     self.all.select {|k| k.strInstructions}
+    # end
     
 end
