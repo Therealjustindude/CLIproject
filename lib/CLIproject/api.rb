@@ -16,28 +16,8 @@ class API
         tequila_id = tequila_obj.idDrink
         url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i="
         response = HTTParty.get("#{url} #{tequila_id}")
-       
-        response["drinks"].each do |arr|
-            instructions= arr.select {|attr| attr == "strInstructions"}
-            tequila_obj.set_attributes(instructions)
-        end
-        
-        response["drinks"].each do |arr|
-            ingredients= arr.select do |attr, value| 
-               if attr.include? "strIngredient"
-                 value
-               end
-            end
-            
-            
-            binding.pry
-            
-            
-            tequila_obj.set_attributes(ingredients)
-     
-        end
-
-        
+        api_hash=response["drinks"][0]
+        tequila_obj.set_attributes(api_hash)
     end
     
     def self.all

@@ -14,18 +14,19 @@ class CLI
         TequilaDrink.list_drink_names
         @input = gets.chomp.to_i 
         find_obj_w_input
-        # puts "Here is your shopping list"
-        # TequilaDrink.shopping_list
-        # puts "enter 1 for instructions or exit to go shopping"
-        # input = gets.chomp
-        # if input.to_i  == 1
-        #     get_instructions
+        puts "Here is your shopping list:"
+        get_shopping_list
+        puts "Enter 'instructions' too see them or 'exit' to go shopping"
+        input = gets.chomp
+        # if input.downcase  == "instructions"
+        #    get_instructions
         # elsif input.downcase == "exit"
-        #     puts "Tequila may not be the answer but it's worth a shot!"
+        #     puts "Tequila may not be the answer but it's worth a shot!" 
+        # else
+        #     puts "Maybe it's the Tequila but that is not a valid response. Please try again."
         # end
         # welcome
-        get_instructions
-
+        
     end
 
     def find_obj_w_input
@@ -35,12 +36,15 @@ class CLI
 
     def get_instructions
         tequila_obj=TequilaDrink.all[@input - 1]
-        tequila_obj.strInstructions
-        
+        puts tequila_obj.strInstructions
     end
 
     def get_shopping_list
-
+        tequila_obj=TequilaDrink.all[@input - 1]
+        array = tequila_obj.strIngredients
+        array.each.with_index(1) do |ingredient, idx|
+            puts "#{idx}. #{ingredient}"
+        end
     end
 
     
