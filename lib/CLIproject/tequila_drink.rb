@@ -31,14 +31,4 @@ class TequilaDrink
     end
 
     
-
-    # def self.shopping_list
-
-    # end
-
-    # def self.how_to_make
-    #     binding.pry
-    #     self.all.select {|k| k.strInstructions}
-    # end
-    
 end

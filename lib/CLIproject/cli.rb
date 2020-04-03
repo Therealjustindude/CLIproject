@@ -4,16 +4,19 @@ class CLI
         welcome_message
     end
 
+    
     def welcome_message
-        
-        puts "We have a list of tequila drinks"
-        puts "We will supply a shopping list and instructions"
-            sleep (1.5)
-        puts "Enter the number that interests you!"
-            sleep (2)
-
+       
+        puts "We have a list of tequila drinks".colorize(:light_blue)
+        puts "We will supply a shopping list and instructions".colorize(:light_blue)
+          sleep (1.5)
+        puts "Enter the number that interests you!".colorize(:light_blue)
+          sleep (2)
+    
+         
         start_and_list_drinks
     end
+    
 
     def start_and_list_drinks
         TequilaDrink.list_drink_names
@@ -33,8 +36,8 @@ class CLI
     end
 
     def whats_next 
-        puts "Enter 'instructions' to see them, 'list' to see Tequila drinks again or 'exit' to get going"
-            @input2 = gets.chomp.downcase 
+        puts "Enter 'instructions' to see them, 'list' to see Tequila drinks again or 'exit' to get going".colorize(:light_blue)
+            @input2 = gets.chomp.downcase
             next_input_test(@input2)
     end
 
@@ -55,8 +58,8 @@ class CLI
     end
    
     def list_or_exit
-        puts "Would you like to go to the 'list' of tequila drinks or 'exit'"
-        puts "Please enter 'list' or 'exit'"
+        puts "Would you like to go to the 'list' of tequila drinks or 'exit'".colorize(:light_blue)
+        puts "Please enter 'list' or 'exit'".colorize(:light_blue)
         input= gets.chomp.downcase
         if input == 'list'
             start_and_list_drinks
@@ -70,7 +73,7 @@ class CLI
     end
 
     def invalid_entry
-        puts "Maybe it's the Tequila but im not sure what you're asking. Please try again."
+        puts "Maybe it's the Tequila but im not sure what you're asking. Please try again.".colorize(:red).on_blue.underline
         sleep (1.5)
     end
 
@@ -85,15 +88,13 @@ class CLI
     end
 
     def get_shopping_list
-        puts "Here is your shopping list:"
         tequila_obj=TequilaDrink.all[@input - 1]
+        puts "You chose #{tequila_obj.strDrink}. Here is your shopping list:".colorize(:light_blue)
         array = tequila_obj.strIngredients
         array.each.with_index(1) do |ingredient, idx|
             puts "#{idx}. #{ingredient}"
         end
     end
-
-    
 
    
 end

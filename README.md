@@ -1,28 +1,20 @@
 # CLIproject
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/CLIproject`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to my Tequila Drink CLI. You will be given a list of Tequila drinks provided by TheCocktailDB. Once you see that list you can choose a drink by its number which will return a shopping list for you. You can then move on to see instructions for that drink. You have the option to go back to the list or exit at any point in the application. Enjoy!
 
 ## Installation
-
-Add this line to your application's Gemfile:
+To get setup: open a terminal and clone down my repository. Change directory into the project file. Install the following gems.
 
 ```ruby
-gem 'CLIproject'
+gem install 'HTTParty'
+gem install 'colorize'
+gem install 'tty'
 ```
-
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install CLIproject
 
 ## Usage
 
-TODO: Write usage instructions here
+Once all the gems are installed you can to start my program by typing 'bin/run' in the terminal 
+
 
 ## Development
 
