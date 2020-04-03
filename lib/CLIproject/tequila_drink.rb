@@ -26,7 +26,7 @@ class TequilaDrink
 
     def self.list_drink_names
         self.all.each.with_index(1) do |obj, idx|
-            puts "#{idx}. #{obj.strDrink}"
+            puts "#{idx}. #{obj.strDrink}".colorize(:green)
         end
     end
 

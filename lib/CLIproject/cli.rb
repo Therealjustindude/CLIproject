@@ -11,7 +11,7 @@ class CLI
         puts "We will supply a shopping list and instructions".colorize(:light_blue)
           sleep (1.5)
         puts "Enter the number that interests you!".colorize(:light_blue)
-          sleep (2)
+          sleep (1.5)
     
          
         start_and_list_drinks
@@ -84,7 +84,7 @@ class CLI
 
     def get_instructions
         tequila_obj=TequilaDrink.all[@input - 1]
-        puts tequila_obj.strInstructions
+        puts tequila_obj.strInstructions.colorize(:green)
     end
 
     def get_shopping_list
@@ -92,7 +92,7 @@ class CLI
         puts "You chose #{tequila_obj.strDrink}. Here is your shopping list:".colorize(:light_blue)
         array = tequila_obj.strIngredients
         array.each.with_index(1) do |ingredient, idx|
-            puts "#{idx}. #{ingredient}"
+            puts "#{idx}. #{ingredient}".colorize(:green)
         end
     end
 
